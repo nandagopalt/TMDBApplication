@@ -1,4 +1,4 @@
-package com.amalwin.tmdbapplication.data.repository
+package com.amalwin.tmdbapplication.data.repository.movie
 
 import android.util.Log
 import com.amalwin.tmdbapplication.data.model.movie.Movie
