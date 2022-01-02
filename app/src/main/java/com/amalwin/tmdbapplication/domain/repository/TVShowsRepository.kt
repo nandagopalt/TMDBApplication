@@ -5,5 +5,5 @@ import com.amalwin.tmdbapplication.data.model.tvshow.TVShow
 interface TVShowsRepository {
     suspend fun getTVShows(): List<TVShow>?
     suspend fun deleteTVShows()
-    suspend fun saveTVShows(): List<TVShow>?
+    suspend fun saveTVShows(): List<TVShow>
 }

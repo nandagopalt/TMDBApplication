@@ -18,7 +18,7 @@ class MovieRepositoryImpl constructor(
        movieLocalDataSource.deletePopularMoviesFromDB()
     }
 
-    override suspend fun saveMovies(): List<Movie>? {
+    override suspend fun saveMovies(): List<Movie> {
         val movies = getMoviesFromAPI()
         deleteMovies()
         movieLocalDataSource.savePopularMoviesToDB(movies)

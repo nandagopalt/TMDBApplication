@@ -22,9 +22,12 @@ class ActorsRepositoryImpl constructor(
         actorLocalDataSource.deleteActors()
     }
 
-    override suspend fun saveActors(actors: List<Actor>) {
+    override suspend fun saveActors(): List<Actor> {
+        val actors = GetActorsFromAPI()
         deleteActors()
         actorLocalDataSource.saveActors(actors)
+        actorCacheDataSource.saveActors(actors)
+        return actors
     }
 
     suspend fun GetActorsFromAPI(): List<Actor> {
