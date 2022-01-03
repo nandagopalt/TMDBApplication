@@ -1,7 +1,8 @@
-package com.amalwin.tmdbapplication.data.repository.tvshow
+package com.amalwin.tmdbapplication.data.repository.tvshow.datasourceimpl
 
 import com.amalwin.tmdbapplication.data.api.TMDBService
 import com.amalwin.tmdbapplication.data.model.tvshow.TVShowList
+import com.amalwin.tmdbapplication.data.repository.tvshow.datasource.TVShowRemoteDataSource
 import retrofit2.Response
 
 class TVShowRemoteDataSourceImpl constructor(

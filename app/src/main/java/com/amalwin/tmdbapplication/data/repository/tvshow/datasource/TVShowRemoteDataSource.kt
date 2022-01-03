@@ -1,4 +1,4 @@
-package com.amalwin.tmdbapplication.data.repository.tvshow
+package com.amalwin.tmdbapplication.data.repository.tvshow.datasource
 
 import com.amalwin.tmdbapplication.data.model.tvshow.TVShowList
 import retrofit2.Response

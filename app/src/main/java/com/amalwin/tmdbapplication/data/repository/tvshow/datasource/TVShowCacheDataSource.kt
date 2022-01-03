@@ -1,9 +1,8 @@
-package com.amalwin.tmdbapplication.data.repository.tvshow
+package com.amalwin.tmdbapplication.data.repository.tvshow.datasource
 
 import com.amalwin.tmdbapplication.data.model.tvshow.TVShow
 
-interface TVShowLocalDataSource {
+interface TVShowCacheDataSource {
     suspend fun getTVShows(): List<TVShow>
     suspend fun saveTVShows(tvShows: List<TVShow>)
-    suspend fun deleteTVShows()
 }
