@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import com.amalwin.tmdbapplication.databinding.ActivityMainBinding
 import com.amalwin.tmdbapplication.presentation.artists.ArtistsActivity
+import com.amalwin.tmdbapplication.presentation.di.core.Injector
 import com.amalwin.tmdbapplication.presentation.movies.MoviesActivity
 import com.amalwin.tmdbapplication.presentation.tvshows.TVShowsActivity
 
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, TVShowsActivity::class.java)
             startActivity(intent)
         }
+
 
         //setContentView(R.layout.activity_main)
     }

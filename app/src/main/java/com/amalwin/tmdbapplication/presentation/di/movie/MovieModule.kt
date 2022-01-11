@@ -11,7 +11,6 @@ import javax.inject.Singleton
 @Module
 class MovieModule {
     @MovieScope
-    @Singleton
     @Provides
     fun providesMovieViewModelFactory(getMoviesUseCase: GetMoviesUseCase, saveMoviesUseCase: SaveMoviesUseCase, deleteMoviesUseCase: DeleteMoviesUseCase): MovieViewModelFactory {
         return MovieViewModelFactory(getMoviesUseCase, saveMoviesUseCase, deleteMoviesUseCase)

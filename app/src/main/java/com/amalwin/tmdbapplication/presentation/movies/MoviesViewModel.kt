@@ -1,5 +1,6 @@
 package com.amalwin.tmdbapplication.presentation.movies
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.amalwin.tmdbapplication.data.model.movie.Movie
@@ -16,11 +17,12 @@ class MoviesViewModel constructor(
 
     }
 
-    fun getMovies() {
+    fun getMovies(): LiveData<List<Movie>> {
        val responseLiveData = liveData<List<Movie>> {
            val response =  getMoviesUseCase.execute()
            emit(response!!)
         }
+        return responseLiveData
     }
 
     fun updateMovies() {

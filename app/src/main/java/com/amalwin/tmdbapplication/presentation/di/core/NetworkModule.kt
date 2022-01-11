@@ -8,10 +8,10 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-class NetworkModule {
+class NetworkModule(private val baseUrl: String) {
     @Singleton
     @Provides
-    fun providesRetrofitInstance(baseUrl: String): Retrofit {
+    fun providesRetrofitInstance(): Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(baseUrl)

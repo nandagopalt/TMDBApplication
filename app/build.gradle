@@ -18,9 +18,11 @@ android {
         buildTypes {
             debug {
                 buildConfigField "String", "API_KEY", "\"8c9ff1166f0fb1a8f8a6ba6f10db48cf\""
+                buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org/3/\""
             }
             release {
                 buildConfigField "String", "API_KEY", "\"8c9ff1166f0fb1a8f8a6ba6f10db48cf\""
+                buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org/3/\""
             }
         }
     }
