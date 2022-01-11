@@ -17,19 +17,14 @@ class MoviesViewModel constructor(
 
     }
 
-    fun getMovies(): LiveData<List<Movie>> {
-       val responseLiveData = liveData<List<Movie>> {
+    fun getMovies() = liveData<List<Movie>> {
            val response =  getMoviesUseCase.execute()
            emit(response!!)
         }
-        return responseLiveData
-    }
 
-    fun updateMovies() {
-        val responseLiveData = liveData<List<Movie>> {
+    fun updateMovies() = liveData<List<Movie>> {
            deleteMoviesUseCase.execute()
            val response = saveMoviesUseCase.execute()
             emit(response!!)
         }
-    }
 }

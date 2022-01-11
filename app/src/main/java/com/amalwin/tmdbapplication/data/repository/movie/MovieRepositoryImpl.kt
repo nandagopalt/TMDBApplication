@@ -44,26 +44,30 @@ class MovieRepositoryImpl constructor(
         lateinit var movies: List<Movie>
          try {
              movies = movieLocalDataSource.getPopularMoviesFromDB()
-             if(movies == null || movies.isEmpty()) {
-                 movies = getMoviesFromAPI()
-                 movieLocalDataSource.savePopularMoviesToDB(movies)
-             }
          } catch(exception: Exception) {
              Log.i("Exception", exception.message.toString())
          }
-        return movies
+        if(movies.isNotEmpty()) {
+            return movies
+        } else {
+            movies = getMoviesFromAPI()
+            movieLocalDataSource.savePopularMoviesToDB(movies)
+        }
+       return movies
     }
 
     suspend fun getMoviesFromCache(): List<Movie> {
         lateinit var movies: List<Movie>
         try {
             movies = movieCacheDataSource.getPopularMoviesFromCache()
-            if(movies == null || movies.isEmpty()) {
-                movies = getMoviesFromDB()
-                movieCacheDataSource.savePopularMoviesToCache(movies)
-            }
         } catch(exception: Exception){
             Log.i("Exception", exception.message.toString())
+        }
+        if(movies.isNotEmpty()) {
+            return movies
+        } else {
+            movies = getMoviesFromDB()
+            movieCacheDataSource.savePopularMoviesToCache(movies)
         }
         return movies
     }

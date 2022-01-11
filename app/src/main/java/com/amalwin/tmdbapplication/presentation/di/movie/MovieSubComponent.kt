@@ -4,7 +4,7 @@ import com.amalwin.tmdbapplication.presentation.movies.MoviesActivity
 import dagger.Subcomponent
 import javax.inject.Singleton
 
-@Singleton
+@MovieScope
 @Subcomponent(modules = [MovieModule::class])
 interface MovieSubComponent {
     fun inject(moviesActivity: MoviesActivity)

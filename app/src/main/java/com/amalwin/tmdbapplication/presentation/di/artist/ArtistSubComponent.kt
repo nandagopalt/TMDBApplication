@@ -5,7 +5,7 @@ import dagger.Component
 import dagger.Subcomponent
 import javax.inject.Singleton
 
-@Singleton
+@ArtistScope
 @Subcomponent(modules = [ArtistModule::class])
 interface ArtistSubComponent {
     fun inject(artistsActivity: ArtistsActivity)

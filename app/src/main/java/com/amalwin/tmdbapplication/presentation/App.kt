@@ -8,7 +8,7 @@ import com.amalwin.tmdbapplication.presentation.di.movie.MovieSubComponent
 import com.amalwin.tmdbapplication.presentation.di.tvshow.TVShowSubComponent
 
 class App : Application(), Injector {
-    private lateinit var appComponent: AppComponent
+    lateinit var appComponent: AppComponent
 
     override fun onCreate() {
         super.onCreate()

@@ -5,7 +5,7 @@ import dagger.Component
 import dagger.Subcomponent
 import javax.inject.Singleton
 
-@Singleton
+@TVShowScope
 @Subcomponent(modules = [TVShowModule::class])
 interface TVShowSubComponent {
     fun inject(tvShowsActivity: TVShowsActivity)
