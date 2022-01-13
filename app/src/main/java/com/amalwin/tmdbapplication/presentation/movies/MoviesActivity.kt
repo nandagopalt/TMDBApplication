@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -43,9 +44,11 @@ class MoviesActivity : AppCompatActivity() {
         val responseLiveData = movieViewModel.getMovies()
         responseLiveData.observe(this, Observer {
             //Log.i("MyTag", it.toString())
-            if(it != null) {
+            if (it != null) {
                 movieAdapter.setMoviesList(it)
                 movieAdapter.notifyDataSetChanged()
+            } else {
+                Toast.makeText(applicationContext, "No data available", Toast.LENGTH_SHORT).show()
             }
         })
         binding.progressBar.visibility = View.GONE
