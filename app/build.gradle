@@ -19,10 +19,12 @@ android {
             debug {
                 buildConfigField "String", "API_KEY", "\"8c9ff1166f0fb1a8f8a6ba6f10db48cf\""
                 buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org/3/\""
+                buildConfigField "String", "IMAGE_BASE_URL", "\"https://image.tmdb.org/t/p/w500\""
             }
             release {
                 buildConfigField "String", "API_KEY", "\"8c9ff1166f0fb1a8f8a6ba6f10db48cf\""
                 buildConfigField "String", "BASE_URL", "\"https://api.themoviedb.org/3/\""
+                buildConfigField "String", "IMAGE_BASE_URL", "\"https://image.tmdb.org/t/p/w500\""
             }
         }
     }

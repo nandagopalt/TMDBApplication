@@ -2,6 +2,7 @@ package com.amalwin.tmdbapplication.presentation.di.core
 
 import com.amalwin.tmdbapplication.domain.repository.ActorRepository
 import com.amalwin.tmdbapplication.domain.repository.MovieRepository
+import com.amalwin.tmdbapplication.domain.repository.TVShowsRepository
 import com.amalwin.tmdbapplication.domain.usecase.*
 import dagger.Module
 import dagger.Provides
@@ -14,6 +15,7 @@ class UseCaseModule {
     fun providesGetMoviesUseCase(movieRepository: MovieRepository): GetMoviesUseCase {
         return GetMoviesUseCase(movieRepository)
     }
+
     @Singleton
     @Provides
     fun providesSaveMoviesUseCase(movieRepository: MovieRepository): SaveMoviesUseCase {
@@ -31,6 +33,7 @@ class UseCaseModule {
     fun providesGetActorsUseCase(actorsRepository: ActorRepository): GetActorsUseCase {
         return GetActorsUseCase(actorsRepository)
     }
+
     @Singleton
     @Provides
     fun providesSaveActorsUseCase(actorsRepository: ActorRepository): SaveActorsUseCase {
@@ -41,5 +44,23 @@ class UseCaseModule {
     @Provides
     fun providesDeleteActorsUseCase(actorsRepository: ActorRepository): DeleteActorsUseCase {
         return DeleteActorsUseCase(actorsRepository)
+    }
+
+    @Singleton
+    @Provides
+    fun providesGetTVShowsUseCase(tvShowsRepository: TVShowsRepository): GetTVShowsUseCase {
+        return GetTVShowsUseCase(tvShowsRepository)
+    }
+
+    @Singleton
+    @Provides
+    fun providesSaveTVShowsUseCase(tvShowsRepository: TVShowsRepository): SaveTVShowUseCase {
+        return SaveTVShowUseCase(tvShowsRepository)
+    }
+
+    @Singleton
+    @Provides
+    fun providesDeleteTVShowsUseCase(tvShowsRepository: TVShowsRepository): DeleteTVShowUseCase {
+        return DeleteTVShowUseCase(tvShowsRepository)
     }
 }

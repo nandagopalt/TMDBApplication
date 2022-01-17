@@ -16,19 +16,15 @@ class ArtistsViewModel constructor(
 
     }
 
-    fun getArtists() {
-        val liveDataResponse = liveData {
-            val response = getArtistsUseCase.execute()
-            emit(response)
-        }
+    fun getArtists() = liveData {
+        val response = getArtistsUseCase.execute()
+        emit(response)
     }
 
-    fun updateArtists() {
-        val liveDataResponse = liveData {
+    fun updateArtists() = liveData {
             deleteArtistsUseCase.execute()
             val response = saveArtistsUseCase.execute()
             emit(response)
-        }
     }
 
 }

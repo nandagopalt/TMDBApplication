@@ -15,18 +15,14 @@ class TVShowViewModel constructor(
 
     }
 
-    fun getTVShows() {
-        val liveDataResponse = liveData {
+    fun getTVShows() = liveData {
             val response = getTVShowsUseCase.execute()
             emit(response)
-        }
     }
 
-    fun updateTVShows() {
-        val liveDataResponse = liveData {
-            deleteTVShowsUseCase.deleteTVShowUseCase()
-            val response = saveTVShowUseCase.execute()
-            emit(response)
-        }
+    fun updateTVShows() = liveData {
+        deleteTVShowsUseCase.deleteTVShowUseCase()
+        val response = saveTVShowUseCase.execute()
+        emit(response)
     }
 }
